@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Answer the Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            margin: 5% 5% 10%;
+        }
+
+        h2 {
+            margin-top: 2%;
+        }
+
+        .form-control {
+            width: 30%;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="text-center">
+            <strong>
+                <p>1 = Strongly Disagree | 5 = Strongly Agree</p>
+            </strong>
+        </section>
+        <section class="text-center">
+            <em>
+                <p>Please answer 10 questions</p>
+            </em>
+        </section>
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <label for="name">
+                        <h4>What is your name?</h4>
+                    </label>
+                    <input type="text" placeholder="Enter your name" id="name">
+                </div>
+                <div class="col">
+                    <label for="image-link">
+                        <h4>Link to your picture</h4>
+                    </label>
+                    <input type="text" placeholder="Enter Image URL" id="image-link">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="question1">
+                    <h2>Question One </h2>
+                    <p>Your mind is always buzzing with unexplored ideas and plans.</p>
+                </label>
+                <select class="form-control" id="question1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question2">
+                    <h2>Question Two </h2>
+                    <p>Generally speaking, you rely more on your experience than your imagination.</p>
+                </label>
+                <select class="form-control" id="question2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question3">
+                    <h2>Question Three </h2>
+                    <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+                </label>
+                <select class="form-control" id="question3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question4">
+                    <h2>Question Four </h2>
+                    <p>You rarely do something just out of sheer curiosity.</p>
+                </label>
+                <select class="form-control" id="question4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question5">
+                    <h2>Question Five </h2>
+                    <p>People can rarely upset you.</p>
+                </label>
+                <select class="form-control" id="question5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question6">
+                    <h2>Question One </h2>
+                    <p>It is often difficult for you to relate to other people’s feelings.</p>
+                </label>
+                <select class="form-control" id="question6">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question7">
+                    <h2>Question Seven </h2>
+                    <p>In a discussion, truth should be more important than people’s sensitivities.</p>
+                </label>
+                <select class="form-control" id="question7">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question8">
+                    <h2>Question Eight </h2>
+                    <p>You rarely get carried away by fantasies and ideas.</p>
+                </label>
+                <select class="form-control" id="question8">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question9">
+                    <h2>Question Nine </h2>
+                    <p>You think that everyone’s views should be respected regardless of whether they are supported by facts
+                        or not.</p>
+                </label>
+                <select class="form-control" id="question9">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question10">
+                    <h2>Question Ten </h2>
+                    <p>You feel more energetic after spending time with a group of people.</p>
+                </label>
+                <select class="form-control" id="question10">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">
+                    <h2>Question One </h2>
+                    <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
+                </label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="text-center submit">
+                <button type="submit" class="btn btn-primary ">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+        // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+        // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+        $(".submit").on("click", function (event) {
+            event.preventDefault();
+
+            var scoresArray = [];
+
+            scoresArray.push(parseInt($("#question1").val().trim())),
+            scoresArray.push(parseInt($("#question2").val().trim())),
+            scoresArray.push(parseInt($("#question3").val().trim())),
+            scoresArray.push(parseInt($("#question4").val().trim())),
+            scoresArray.push(parseInt($("#question5").val().trim())),
+            scoresArray.push(parseInt($("#question6").val().trim())),
+            scoresArray.push(parseInt($("#question7").val().trim())),
+            scoresArray.push(parseInt($("#question8").val().trim())),
+            scoresArray.push(parseInt($("#question9").val().trim())),
+            scoresArray.push(parseInt($("#question10").val().trim()))
+
+            // Here we grab the form elements
+            var newSurveyResponse = {
+                name: $("#name").val().trim(),
+                imageURL: $("#image-link").val().trim(),
+                scores:scoresArray
+            };
+
+            return(matchmaker(newSurveyResponse));
+            console.log(newSurveyResponse);
+
+            // This line is the magic. It"s very similar to the standard ajax function we used.
+            // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+            // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+            // depending on if a tables is available or not.
+
+            $.post("/api/survey", newSurveyResponse,
+                function (data) {
+
+                    // If a table is available... tell user they are booked.
+                    if (data) {
+                        alert(`You might be interested in `);
+                    }
+
+                    // If a table is available... tell user they on the waiting list.
+                    else {
+                        alert("Sorry please fill out the form correctly");
+                    }
+
+                    // Clear the form when submitting
+
+                        $("#name").val(""),
+                        $("#image-link").val(""),
+                        $("#question1").val(""),
+                        $("#question2").val(""),
+                        $("#question3").val(""),
+                        $("#question4").val(""),
+                        $("#question5").val(""),
+                        $("#question6").val(""),
+                        $("#question7").val(""),
+                        $("#question8").val(""),
+                        $("#question9").val(""),
+                        $("#question10").val("")
+
+                });
+
+        });
+    </script>
+</body>
+
+</html>
