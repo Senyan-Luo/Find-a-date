@@ -16,6 +16,10 @@
             margin: 5% 5% 10%;
         }
 
+        #intro {
+            margin: 3% 0 3%;
+        }
+
         h2 {
             margin-top: 2%;
         }
@@ -39,7 +43,7 @@
         </section>
         <section class="text-center">
             <em>
-                <p>Please answer 10 questions</p>
+                <p id="intro">Please answer 10 questions</p>
             </em>
         </section>
         <form>
@@ -189,24 +193,31 @@
                     <option>5</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">
-                    <h2>Question One </h2>
-                    <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
-                </label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
             <div class="text-center submit">
-                <button type="submit" class="btn btn-primary ">Submit</button>
+                <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">Submit</button>
             </div>
         </form>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your best match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="nameDiv" class="text-center"></div>
+                <img id="imageDiv" src="" alt="">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
         // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
@@ -219,24 +230,23 @@
             var scoresArray = [];
 
             scoresArray.push(parseInt($("#question1").val().trim())),
-            scoresArray.push(parseInt($("#question2").val().trim())),
-            scoresArray.push(parseInt($("#question3").val().trim())),
-            scoresArray.push(parseInt($("#question4").val().trim())),
-            scoresArray.push(parseInt($("#question5").val().trim())),
-            scoresArray.push(parseInt($("#question6").val().trim())),
-            scoresArray.push(parseInt($("#question7").val().trim())),
-            scoresArray.push(parseInt($("#question8").val().trim())),
-            scoresArray.push(parseInt($("#question9").val().trim())),
-            scoresArray.push(parseInt($("#question10").val().trim()))
+                scoresArray.push(parseInt($("#question2").val().trim())),
+                scoresArray.push(parseInt($("#question3").val().trim())),
+                scoresArray.push(parseInt($("#question4").val().trim())),
+                scoresArray.push(parseInt($("#question5").val().trim())),
+                scoresArray.push(parseInt($("#question6").val().trim())),
+                scoresArray.push(parseInt($("#question7").val().trim())),
+                scoresArray.push(parseInt($("#question8").val().trim())),
+                scoresArray.push(parseInt($("#question9").val().trim())),
+                scoresArray.push(parseInt($("#question10").val().trim()))
 
             // Here we grab the form elements
             var newSurveyResponse = {
                 name: $("#name").val().trim(),
                 imageURL: $("#image-link").val().trim(),
-                scores:scoresArray
+                scores: scoresArray
             };
 
-            return(matchmaker(newSurveyResponse));
             console.log(newSurveyResponse);
 
             // This line is the magic. It"s very similar to the standard ajax function we used.
@@ -245,17 +255,9 @@
             // depending on if a tables is available or not.
 
             $.post("/api/survey", newSurveyResponse,
-                function (data) {
-
-                    // If a table is available... tell user they are booked.
-                    if (data) {
-                        alert(`You might be interested in `);
-                    }
-
-                    // If a table is available... tell user they on the waiting list.
-                    else {
-                        alert("Sorry please fill out the form correctly");
-                    }
+                function (response) {
+                    $("#nameDiv").text(response.name);
+                    $("#imageDiv").attr("src", response.imageURL);
 
                     // Clear the form when submitting
 
